@@ -148,7 +148,7 @@ The calling feature in this application is implemented using client-side web API
 
 ## 8. AI Tools Used
 
-* **Antigravity (Google DeepMind):** Used as an AI pair-programming assistant for scaffolding TypeScript interfaces, translating reference HTML structures into modular React components, and generating automated verification test scripts.
+* **Antigravity (Google DeepMind)/ GPT/ google:** Used as an AI pair-programming assistant for scaffolding TypeScript interfaces, translating reference HTML structures into modular React components, and generating automated verification test scripts.
 
 ---
 
