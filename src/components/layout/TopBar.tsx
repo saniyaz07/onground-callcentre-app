@@ -244,28 +244,6 @@ export const TopBar: React.FC = () => {
             </button>
 
             <button 
-              onClick={() => {
-                setDropdownOpen(false);
-                startCall('AvaniBot Coach', '+91 90000 00000', 'SmartGRID Pitch Coach', 24990, 'practice');
-              }}
-              className="w-full flex items-center gap-[10px] p-[10px_14px] text-[13px] text-purple-800 bg-purple-50/70 hover:bg-purple-100/70 cursor-pointer border-b border-[#f0f0f0] text-left transition-colors font-semibold"
-            >
-              <Sparkles className="w-4 h-4 text-purple-600" />
-              <span>Start AI Practice Call</span>
-            </button>
-
-            <button 
-              onClick={() => {
-                setDropdownOpen(false);
-                openConsentModal();
-              }}
-              className="w-full flex items-center gap-[10px] p-[10px_14px] text-[13px] text-emerald-800 bg-emerald-50/70 hover:bg-emerald-100/70 cursor-pointer border-b border-[#f0f0f0] text-left transition-colors font-semibold"
-            >
-              <Shield className="w-4 h-4 text-emerald-600" />
-              <span>Ask Before You Record</span>
-            </button>
-
-            <button 
               onClick={() => setDropdownOpen(false)}
               className="w-full flex items-center gap-[10px] p-[10px_14px] text-[13.5px] text-[#e24b4a] hover:bg-rose-50 cursor-pointer text-left transition-colors font-medium"
             >
