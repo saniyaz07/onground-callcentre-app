@@ -3,6 +3,8 @@
 > **Engineering Internship Working Product Submission**  
 > **Candidate Submission for**: Mukunda Dwarkanath (`mukunda@on-ground.ai`) & Rashmi Sehgal (`rashmi@on-ground.ai`)  
 > **Built by Candidate**: Saniya Zareen Ansari  
+> **Live Deployed Web Application**: [https://onground-callcentre-app.vercel.app](https://onground-callcentre-app.vercel.app)  
+> **GitHub Repository**: [https://github.com/saniyaz07/onground-callcentre-app](https://github.com/saniyaz07/onground-callcentre-app)  
 > **Repository Directory**: `D:\onground-callcentre-app`  
 
 ---
@@ -176,6 +178,15 @@ npm install
 npm run dev
 ```
 Open **[http://localhost:3000](http://localhost:3000)** in Google Chrome.
+
+### Production Deployment & Live Website
+* **Live Website URL**: [https://onground-callcentre-app.vercel.app](https://onground-callcentre-app.vercel.app)
+* **Hosting Platform**: Vercel (Hobby / Free Plan)
+* **Framework Preset**: Vite
+* **Root Directory**: `./`
+* **Build Command**: `npm run build`
+* **Output Directory**: `dist`
+* **SPA Routing**: Configured via `vercel.json` rewrites (`/(.*)` -> `/index.html`) to support seamless browser navigation and page reloads on all sub-routes.
 
 ### Production Build & Preview
 ```bash
