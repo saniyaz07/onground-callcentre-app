@@ -553,7 +553,7 @@ export const PracticeCallScreen: React.FC = () => {
       {/* ======================================================== */}
       <div 
         id="dialerAiAssistCol"
-        className="w-full lg:w-[380px] min-w-0 flex-shrink-0 max-h-[85vh] lg:max-h-[720px] overflow-y-auto"
+        className="w-full lg:w-[380px] min-w-0 flex-shrink-0 max-h-none lg:max-h-[720px] overflow-visible lg:overflow-y-auto"
       >
         <div 
           id="dialerAiAssist"
@@ -574,21 +574,21 @@ export const PracticeCallScreen: React.FC = () => {
           {/* Gamify Strip (#aiAssistGamifyStrip) */}
           <div 
             id="aiAssistGamifyStrip"
-            className="flex items-center gap-3.5 p-[9px_16px] bg-gradient-to-r from-[#0a1a14] via-[#0f3d2f] to-[#0f6e56] border-b border-white/10"
+            className="flex items-center gap-2 sm:gap-3.5 p-[8px_12px] sm:p-[9px_16px] bg-gradient-to-r from-[#0a1a14] via-[#0f3d2f] to-[#0f6e56] border-b border-white/10 flex-wrap sm:flex-nowrap"
           >
             <Trophy className="w-4 h-4 text-[#FFD700] flex-shrink-0" />
-            <div className="flex gap-4 flex-1">
-              <div>
-                <span id="aiGamifyValue" className="text-[15px] font-extrabold text-white">{dealValueStr}</span>
-                <span className="text-[12.5px] text-[#9fe1cb] font-semibold ml-1">unlock</span>
+            <div className="flex gap-2.5 sm:gap-4 flex-1 flex-wrap sm:flex-nowrap items-center text-xs sm:text-sm">
+              <div className="whitespace-nowrap">
+                <span id="aiGamifyValue" className="text-xs sm:text-[15px] font-extrabold text-white">{dealValueStr}</span>
+                <span className="text-[11px] sm:text-[12.5px] text-[#9fe1cb] font-semibold ml-1">unlock</span>
               </div>
-              <div>
-                <span id="aiGamifyPts" className="text-[15px] font-extrabold text-[#FFD700]">+{ogScoreBoost}</span>
-                <span className="text-[12.5px] text-[#9fe1cb] font-semibold ml-1">OG Score™</span>
+              <div className="whitespace-nowrap">
+                <span id="aiGamifyPts" className="text-xs sm:text-[15px] font-extrabold text-[#FFD700]">+{ogScoreBoost}</span>
+                <span className="text-[11px] sm:text-[12.5px] text-[#9fe1cb] font-semibold ml-1">OG Score™</span>
               </div>
-              <div>
-                <span id="aiGamifyRank" className="text-[15px] font-extrabold text-white">#{leaderboardRank}</span>
-                <span className="text-[12.5px] text-[#9fe1cb] font-semibold ml-1">rank if closed</span>
+              <div className="whitespace-nowrap">
+                <span id="aiGamifyRank" className="text-xs sm:text-[15px] font-extrabold text-white">#{leaderboardRank}</span>
+                <span className="text-[11px] sm:text-[12.5px] text-[#9fe1cb] font-semibold ml-1">rank if closed</span>
               </div>
             </div>
           </div>

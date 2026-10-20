@@ -127,36 +127,46 @@ export const PlannerView: React.FC = () => {
         <PracticeCallScreen />
       ) : (
         <>
-          {/* Mobile Sub-Navigation Bar for Planner (Calls to make | Incoming | Recent) */}
-          <div className="md:hidden flex items-center justify-between bg-white border-b border-slate-200 px-3 py-2 gap-2 flex-shrink-0">
+          {/* Mobile Sub-Navigation Bar for Planner (Calls to make | Incoming | Recent | Practise) */}
+          <div className="md:hidden flex items-center justify-between bg-white border-b border-slate-200 px-2 sm:px-3 py-2 gap-1.5 sm:gap-2 flex-shrink-0">
             <button 
               onClick={() => setPlanSubTab('outgoing')}
-              className={`flex-1 py-1.5 px-2 rounded-lg text-xs font-bold text-center transition-all ${
+              className={`flex-1 py-1.5 px-1.5 sm:px-2 rounded-lg text-xs font-bold text-center transition-all ${
                 planSubTab === 'outgoing' ? 'bg-[#1d9e75] text-white shadow-sm' : 'text-slate-600 bg-slate-100 hover:bg-slate-200'
               }`}
             >
-              Calls to make
+              Calls
             </button>
             <button 
               onClick={() => setPlanSubTab('incoming')}
-              className={`flex-1 py-1.5 px-2 rounded-lg text-xs font-bold text-center transition-all relative ${
+              className={`flex-1 py-1.5 px-1.5 sm:px-2 rounded-lg text-xs font-bold text-center transition-all relative ${
                 planSubTab === 'incoming' ? 'bg-[#1d9e75] text-white shadow-sm' : 'text-slate-600 bg-slate-100 hover:bg-slate-200'
               }`}
             >
               <span>Incoming</span>
               {missedCalls.length > 0 && (
-                <span className="ml-1.5 px-1.5 py-0.2 bg-rose-500 text-white rounded-full text-[10px]">
+                <span className="ml-1 px-1.5 py-0.2 bg-rose-500 text-white rounded-full text-[10px]">
                   {missedCalls.length}
                 </span>
               )}
             </button>
             <button 
               onClick={() => setPlanSubTab('recent')}
-              className={`flex-1 py-1.5 px-2 rounded-lg text-xs font-bold text-center transition-all ${
+              className={`flex-1 py-1.5 px-1.5 sm:px-2 rounded-lg text-xs font-bold text-center transition-all ${
                 planSubTab === 'recent' ? 'bg-[#1d9e75] text-white shadow-sm' : 'text-slate-600 bg-slate-100 hover:bg-slate-200'
               }`}
             >
               Recent
+            </button>
+            <button 
+              onClick={() => {
+                startCall('AvaniBot Pitch Coach', '+91 90000 00000', 'SmartGRID Pitch Simulation', 18490, 'practice');
+              }}
+              className="py-1.5 px-2 rounded-lg text-xs font-bold text-center transition-all bg-amber-50 text-amber-800 border border-amber-300 hover:bg-amber-100 flex items-center justify-center gap-1"
+              title="Practise a call with AvaniBot"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+              <span className="hidden min-[360px]:inline">Practise</span>
             </button>
           </div>
 
@@ -180,6 +190,8 @@ export const PlannerView: React.FC = () => {
                 return (
                   <div 
                     key={lead.id}
+                    data-lead-id={lead.id}
+                    data-lead-name={lead.name}
                     className="bg-white border border-[#ece7fa] rounded-[13px] overflow-hidden shadow-[0_1px_4px_rgba(16,24,40,0.05)] transition-all"
                   >
                     {/* Header Row (.plan-row-head) */}
@@ -299,15 +311,15 @@ export const PlannerView: React.FC = () => {
             </div>
 
             {/* Summary Box (#planIncomingSummary) */}
-            <div className="flex items-center gap-4 m-[8px_14px_4px] bg-[#faf9f6] rounded-[12px] p-[11px_14px]">
+            <div className="flex items-center gap-3 sm:gap-4 m-[8px_14px_4px] bg-[#faf9f6] rounded-[12px] p-[10px_12px] sm:p-[11px_14px] flex-wrap sm:flex-nowrap">
               <div>
-                <div className="text-[18px] font-extrabold text-[#1a1a1a]">{missedCalls.length}</div>
-                <div className="text-[11px] font-extrabold text-[#8e8e93] uppercase">Missed today</div>
+                <div className="text-[17px] sm:text-[18px] font-extrabold text-[#1a1a1a]">{missedCalls.length}</div>
+                <div className="text-[10px] sm:text-[11px] font-extrabold text-[#8e8e93] uppercase">Missed today</div>
               </div>
-              <div className="w-[1px] h-[24px] bg-[#e5e5ea]" />
+              <div className="w-[1px] h-[24px] bg-[#e5e5ea] hidden min-[340px]:block" />
               <div>
-                <div className="text-[18px] font-extrabold text-[#0f6e56]">₹{totalValueAtStake.toLocaleString('en-IN')}</div>
-                <div className="text-[11px] font-extrabold text-[#8e8e93] uppercase">Expected value at stake</div>
+                <div className="text-[17px] sm:text-[18px] font-extrabold text-[#0f6e56]">₹{totalValueAtStake.toLocaleString('en-IN')}</div>
+                <div className="text-[10px] sm:text-[11px] font-extrabold text-[#8e8e93] uppercase">Expected value at stake</div>
               </div>
             </div>
 
@@ -407,12 +419,15 @@ export const PlannerView: React.FC = () => {
 
       {/* Floating Keypad button (.dialerKeypadSheet trigger matching mock lines 818-826) */}
       <div 
+        id="plannerKeypadBtn"
+        role="button"
+        tabIndex={0}
         onClick={() => setIsKeypadOpen(true)}
-        className="fixed bottom-20 md:bottom-6 right-4 sm:right-6 w-[54px] h-[54px] rounded-full bg-gradient-to-br from-[#4338ca] to-[#6d28d9] shadow-[0_6px_20px_rgba(67,56,202,0.45)] flex items-center justify-center cursor-pointer z-[999975] hover:scale-105 active:scale-95 transition-all text-white"
+        className="fixed bottom-28 sm:bottom-24 md:bottom-6 right-3 sm:right-6 w-[50px] sm:w-[54px] h-[50px] sm:h-[54px] rounded-full bg-gradient-to-br from-[#4338ca] to-[#6d28d9] shadow-[0_6px_20px_rgba(67,56,202,0.45)] flex items-center justify-center cursor-pointer z-40 hover:scale-105 active:scale-95 transition-all text-white"
         title="Open phone keypad / dial pad"
         aria-label="Open phone keypad"
       >
-        <Grid3X3 className="w-[22px] h-[22px] text-white" />
+        <Grid3X3 className="w-[20px] sm:w-[22px] h-[20px] sm:h-[22px] text-white" />
       </div>
 
       {/* Phone Keypad / Dial Pad Modal */}

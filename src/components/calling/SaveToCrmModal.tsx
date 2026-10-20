@@ -67,22 +67,22 @@ export const SaveToCrmModal: React.FC<SaveToCrmModalProps> = ({
       onClick={onClose}
     >
       <div 
-        className="w-full max-w-lg bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl border border-slate-200 overflow-hidden relative animate-in slide-in-from-bottom duration-300"
+        className="w-full max-w-lg bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl border border-slate-200 overflow-hidden relative animate-in slide-in-from-bottom duration-300 max-h-[92vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* iOS handle bar for mobile */}
-        <div className="w-10 h-1 bg-slate-300 rounded-full mx-auto mt-2.5 sm:hidden" />
+        <div className="w-10 h-1 bg-slate-300 rounded-full mx-auto mt-2.5 sm:hidden flex-shrink-0" />
 
         {/* Close Button */}
         <button 
           onClick={onClose}
-          className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-700 flex items-center justify-center transition-colors text-sm font-bold z-10"
+          className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-700 flex items-center justify-center transition-colors text-sm font-bold z-10 cursor-pointer"
           aria-label="Close"
         >
           <X className="w-4 h-4" />
         </button>
 
-        <div className="p-6">
+        <div className="p-5 sm:p-6 overflow-y-auto flex-1">
           {/* Header */}
           <div className="flex items-center gap-3 mb-1">
             <div className="w-10 h-10 rounded-full bg-[#e1f5ee] flex items-center justify-center flex-shrink-0 text-[#0f6e56]">

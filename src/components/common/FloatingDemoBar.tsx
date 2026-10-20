@@ -44,10 +44,10 @@ export const FloatingDemoBar: React.FC = () => {
     <>
       <div 
         id="ogcBar" 
-        className="fixed bottom-[68px] md:bottom-[22px] left-1/2 -translate-x-1/2 z-[999970] flex flex-col gap-[6px] items-center pointer-events-none select-none max-w-[96vw]"
+        className="fixed bottom-[68px] md:bottom-[22px] left-1/2 -translate-x-1/2 z-[999970] flex flex-col gap-[6px] items-center pointer-events-none select-none max-w-[calc(100vw-8px)]"
       >
-        <div className="flex items-center gap-[5px] flex-nowrap justify-center bg-white border border-[#e5e7eb] rounded-[22px] p-[5px_6px_5px_5px] shadow-[0_10px_24px_rgba(15,23,42,0.18)] pointer-events-auto">
-          <span className="text-[10.5px] font-[800] text-[#3b2a00] bg-[#f5c542] rounded-[14px] px-[9px] py-[6px] whitespace-nowrap tracking-[0.3px]">
+        <div className="flex items-center gap-1 sm:gap-[5px] flex-nowrap justify-center bg-white border border-[#e5e7eb] rounded-[22px] p-[4px_5px] sm:p-[5px_6px_5px_5px] shadow-[0_10px_24px_rgba(15,23,42,0.18)] pointer-events-auto">
+          <span className="text-[9.5px] sm:text-[10.5px] font-[800] text-[#3b2a00] bg-[#f5c542] rounded-[14px] px-1.5 sm:px-[9px] py-1 sm:py-[6px] whitespace-nowrap tracking-[0.3px]">
             DEMO
           </span>
 
@@ -55,23 +55,23 @@ export const FloatingDemoBar: React.FC = () => {
             <>
               <button 
                 onClick={handleStartInAppCall}
-                className="border-none bg-[#f1f5f9] hover:bg-[#e2e8f0] text-[#0f172a] rounded-[14px] px-[10px] py-[6px] text-[12px] font-[700] cursor-pointer whitespace-nowrap flex items-center gap-1.5 transition-colors"
+                className="border-none bg-[#f1f5f9] hover:bg-[#e2e8f0] text-[#0f172a] rounded-[14px] px-2 sm:px-[10px] py-1 sm:py-[6px] text-[11px] sm:text-[12px] font-[700] cursor-pointer whitespace-nowrap flex items-center gap-1 sm:gap-1.5 transition-colors"
               >
-                <Phone className="w-3.5 h-3.5 text-[#0f6e56]" />
+                <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0f6e56]" />
                 <span>In-app call</span>
               </button>
               <button 
                 onClick={handleStartPhoneCall}
-                className="border-none bg-[#f1f5f9] hover:bg-[#e2e8f0] text-[#0f172a] rounded-[14px] px-[10px] py-[6px] text-[12px] font-[700] cursor-pointer whitespace-nowrap flex items-center gap-1.5 transition-colors"
+                className="border-none bg-[#f1f5f9] hover:bg-[#e2e8f0] text-[#0f172a] rounded-[14px] px-2 sm:px-[10px] py-1 sm:py-[6px] text-[11px] sm:text-[12px] font-[700] cursor-pointer whitespace-nowrap flex items-center gap-1 sm:gap-1.5 transition-colors"
               >
-                <PhoneOutgoing className="w-3.5 h-3.5 text-blue-600" />
+                <PhoneOutgoing className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-blue-600" />
                 <span>Phone call</span>
               </button>
               <button 
                 onClick={() => setDpdpSheetOpen(true)}
                 title="How DPDP works in this app"
                 aria-label="How DPDP works in this app"
-                className="border-none bg-[#e1f5ee] hover:bg-[#c9ebd9] text-[#0f6e56] rounded-[14px] px-[9px] py-[6px] text-[12px] font-[600] cursor-pointer whitespace-nowrap flex items-center justify-center transition-colors"
+                className="border-none bg-[#e1f5ee] hover:bg-[#c9ebd9] text-[#0f6e56] rounded-[14px] px-1.5 sm:px-[9px] py-1 sm:py-[6px] text-[11px] sm:text-[12px] font-[600] cursor-pointer whitespace-nowrap flex items-center justify-center transition-colors"
               >
                 <ShieldCheck className="w-3.5 h-3.5" />
               </button>
@@ -82,7 +82,7 @@ export const FloatingDemoBar: React.FC = () => {
                 onClick={() => {
                   showToast('Live Nudge: Customer sounded unsure. Recording paused.');
                 }}
-                className="border-none bg-[#f1f5f9] hover:bg-[#e2e8f0] text-[#0f172a] rounded-[14px] px-[10px] py-[6px] text-[12px] font-[700] cursor-pointer whitespace-nowrap transition-colors"
+                className="border-none bg-[#f1f5f9] hover:bg-[#e2e8f0] text-[#0f172a] rounded-[14px] px-2 sm:px-[10px] py-1 sm:py-[6px] text-[11px] sm:text-[12px] font-[700] cursor-pointer whitespace-nowrap transition-colors"
               >
                 “Unsure?”
               </button>
@@ -90,7 +90,7 @@ export const FloatingDemoBar: React.FC = () => {
                 onClick={() => {
                   showToast('Sec 11: Customer requested copy of data. Logged to DPO.');
                 }}
-                className="border-none bg-[#f1f5f9] hover:bg-[#e2e8f0] text-[#0f172a] rounded-[14px] px-[10px] py-[6px] text-[12px] font-[700] cursor-pointer whitespace-nowrap transition-colors"
+                className="border-none bg-[#f1f5f9] hover:bg-[#e2e8f0] text-[#0f172a] rounded-[14px] px-2 sm:px-[10px] py-1 sm:py-[6px] text-[11px] sm:text-[12px] font-[700] cursor-pointer whitespace-nowrap transition-colors"
               >
                 “My data?”
               </button>
@@ -99,7 +99,7 @@ export const FloatingDemoBar: React.FC = () => {
                   showToast('Sec 6: Customer asked to stop recording. Stopped immediately.');
                   withdrawRecordingConsent();
                 }}
-                className="border-none bg-[#f1f5f9] hover:bg-[#e2e8f0] text-[#0f172a] rounded-[14px] px-[10px] py-[6px] text-[12px] font-[700] cursor-pointer whitespace-nowrap transition-colors"
+                className="border-none bg-[#f1f5f9] hover:bg-[#e2e8f0] text-[#0f172a] rounded-[14px] px-2 sm:px-[10px] py-1 sm:py-[6px] text-[11px] sm:text-[12px] font-[700] cursor-pointer whitespace-nowrap transition-colors"
               >
                 “Stop!”
               </button>
@@ -107,7 +107,7 @@ export const FloatingDemoBar: React.FC = () => {
                 onClick={() => setDpdpSheetOpen(true)}
                 title="How DPDP works in this app"
                 aria-label="How DPDP works in this app"
-                className="border-none bg-[#e1f5ee] hover:bg-[#c9ebd9] text-[#0f6e56] rounded-[14px] px-[9px] py-[6px] text-[12px] font-[600] cursor-pointer whitespace-nowrap flex items-center justify-center transition-colors"
+                className="border-none bg-[#e1f5ee] hover:bg-[#c9ebd9] text-[#0f6e56] rounded-[14px] px-1.5 sm:px-[9px] py-1 sm:py-[6px] text-[11px] sm:text-[12px] font-[600] cursor-pointer whitespace-nowrap flex items-center justify-center transition-colors"
               >
                 <ShieldCheck className="w-3.5 h-3.5" />
               </button>

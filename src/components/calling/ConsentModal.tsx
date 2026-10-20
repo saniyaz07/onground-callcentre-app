@@ -117,6 +117,8 @@ export const ConsentModal: React.FC<ConsentModalProps> = ({
     setTimeout(() => setActionNotice(null), 4000);
   };
 
+  if (!isOpen) return null;
+
   const currentStatus = consentRecord?.status || 'pending';
 
   return (
@@ -357,20 +359,22 @@ export const ConsentModal: React.FC<ConsentModalProps> = ({
                       <label className="text-[11px] font-semibold text-slate-300 block">
                         {isMinor ? "Parent's mobile number" : "Customer's mobile number"}
                       </label>
-                      <div className="flex items-center gap-2">
-                        <span className="px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-slate-300 font-bold text-xs">
-                          +91
-                        </span>
-                        <input
-                          type="text"
-                          value={phoneInput}
-                          onChange={(e) => setPhoneInput(e.target.value)}
-                          placeholder="98450 xxxxx"
-                          className="flex-1 bg-slate-900 border border-slate-700 focus:border-emerald-500 rounded-xl px-3 py-2 text-xs text-white outline-none font-mono"
-                        />
+                      <div className="flex flex-wrap sm:flex-nowrap items-center gap-2">
+                        <div className="flex items-center gap-2 flex-1 min-w-[140px]">
+                          <span className="px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-slate-300 font-bold text-xs flex-shrink-0">
+                            +91
+                          </span>
+                          <input
+                            type="text"
+                            value={phoneInput}
+                            onChange={(e) => setPhoneInput(e.target.value)}
+                            placeholder="98450 xxxxx"
+                            className="flex-1 bg-slate-900 border border-slate-700 focus:border-emerald-500 rounded-xl px-3 py-2 text-xs text-white outline-none font-mono min-w-0"
+                          />
+                        </div>
                         <button
                           onClick={handleSendWhatsApp}
-                          className="bg-[#0f6e56] hover:bg-[#128367] text-white px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-colors shadow"
+                          className="bg-[#0f6e56] hover:bg-[#128367] text-white px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-colors shadow flex-shrink-0"
                         >
                           <Send className="w-3.5 h-3.5" />
                           <span>Send</span>

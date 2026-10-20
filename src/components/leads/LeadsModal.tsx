@@ -73,8 +73,10 @@ export const LeadsModal: React.FC = () => {
             </div>
 
             <button 
+              id="closeLeadModalBtn"
               onClick={closeLeadModal}
-              className="p-1.5 hover:bg-slate-800 rounded-full text-slate-400 hover:text-white"
+              aria-label="Close lead details"
+              className="p-1.5 hover:bg-slate-800 rounded-full text-slate-400 hover:text-white cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
@@ -123,7 +125,7 @@ export const LeadsModal: React.FC = () => {
           </div>
 
           {/* Subscores breakdown */}
-          <div className="grid grid-cols-3 gap-2 mt-4 pt-3 border-t border-slate-200/80">
+          <div className="grid grid-cols-1 min-[380px]:grid-cols-3 gap-2 mt-4 pt-3 border-t border-slate-200/80">
             {currentLead.subscores.map((sub, i) => (
               <div key={i} className="bg-white p-2 rounded-xl border border-slate-200/80">
                 <div className="flex justify-between text-[11px] mb-1">
@@ -226,30 +228,30 @@ export const LeadsModal: React.FC = () => {
         </div>
 
         {/* Modal Footer (Calling Triggers & Paging) */}
-        <div className="p-4 bg-white border-t border-slate-200 flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
+        <div className="p-3.5 sm:p-4 bg-white border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+          <div className="flex items-center justify-between sm:justify-start gap-2">
             <button
               onClick={prevLead}
-              className="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50"
+              className="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 flex-1 sm:flex-initial text-center"
             >
               ← Previous Lead
             </button>
             <button
               onClick={nextLead}
-              className="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50"
+              className="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 flex-1 sm:flex-initial text-center"
             >
               Next Lead →
             </button>
           </div>
 
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
             <a
               href={`tel:${currentLead.phone}`}
-              className="px-3.5 py-2 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-50 text-xs font-bold flex items-center gap-1.5"
+              className="px-3 py-2 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-50 text-xs font-bold flex items-center justify-center gap-1.5 flex-1 sm:flex-initial"
               title="Opens device native phone dialer for real carrier call"
             >
               <Phone className="w-3.5 h-3.5" />
-              <span>Carrier Dial (tel:)</span>
+              <span>Carrier Dial</span>
             </a>
 
             <button
@@ -257,11 +259,11 @@ export const LeadsModal: React.FC = () => {
                 closeLeadModal();
                 startCall(currentLead.name, currentLead.phone, currentLead.product, currentLead.expectedValue);
               }}
-              className="px-4 py-2 rounded-xl bg-[#1d9e75] hover:bg-[#168a65] text-white text-xs font-bold flex items-center gap-2 shadow-md transition-all animate-pulse-glow"
+              className="px-3.5 py-2 rounded-xl bg-[#1d9e75] hover:bg-[#168a65] text-white text-xs font-bold flex items-center justify-center gap-2 shadow-md transition-all animate-pulse-glow flex-1 sm:flex-initial"
               title="Starts interactive browser voice prototype"
             >
               <PhoneCall className="w-4 h-4" />
-              <span>In-App Voice Call (Prototype)</span>
+              <span>In-App Voice Call</span>
             </button>
           </div>
         </div>

@@ -113,36 +113,36 @@ export const DashboardView: React.FC = () => {
         </div>
 
         {/* 4 KPI CARDS (.cc-kpi-row) */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-4 relative z-10">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5 mt-3.5 sm:mt-4 relative z-10">
           {/* Card 1: OG Score™ */}
-          <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-2.5 text-center shadow-inner">
-            <div className="text-lg font-black text-white tabular">76</div>
-            <div className="text-[11px] font-bold text-indigo-200 uppercase tracking-wide mt-0.5">
+          <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-2 sm:p-2.5 text-center shadow-inner">
+            <div className="text-base sm:text-lg font-black text-white tabular">76</div>
+            <div className="text-[10px] sm:text-[11px] font-bold text-indigo-200 uppercase tracking-wide mt-0.5">
               OG Score™
             </div>
-            <div className="inline-flex items-center gap-0.5 text-[11px] font-extrabold text-emerald-300 bg-emerald-950/60 px-1.5 py-0.2 rounded-md mt-1 border border-emerald-800/40">
+            <div className="inline-flex items-center gap-0.5 text-[10px] sm:text-[11px] font-extrabold text-emerald-300 bg-emerald-950/60 px-1.5 py-0.2 rounded-md mt-1 border border-emerald-800/40">
               ▲13
             </div>
           </div>
 
           {/* Card 2: Avg Handle Time */}
-          <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-2.5 text-center shadow-inner">
-            <div className="text-lg font-black text-white tabular">4m 12s</div>
-            <div className="text-[11px] font-bold text-indigo-200 uppercase tracking-wide mt-0.5">
+          <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-2 sm:p-2.5 text-center shadow-inner">
+            <div className="text-base sm:text-lg font-black text-white tabular">4m 12s</div>
+            <div className="text-[10px] sm:text-[11px] font-bold text-indigo-200 uppercase tracking-wide mt-0.5">
               Avg Handle Time
             </div>
-            <div className="inline-flex items-center gap-0.5 text-[11px] font-extrabold text-emerald-300 bg-emerald-950/60 px-1.5 py-0.2 rounded-md mt-1 border border-emerald-800/40">
+            <div className="inline-flex items-center gap-0.5 text-[10px] sm:text-[11px] font-extrabold text-emerald-300 bg-emerald-950/60 px-1.5 py-0.2 rounded-md mt-1 border border-emerald-800/40">
               ▼8%
             </div>
           </div>
 
           {/* Card 3: CSAT Today */}
-          <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-2.5 text-center shadow-inner">
-            <div className="text-lg font-black text-white tabular">94%</div>
-            <div className="text-[11px] font-bold text-indigo-200 uppercase tracking-wide mt-0.5">
+          <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-2 sm:p-2.5 text-center shadow-inner">
+            <div className="text-base sm:text-lg font-black text-white tabular">94%</div>
+            <div className="text-[10px] sm:text-[11px] font-bold text-indigo-200 uppercase tracking-wide mt-0.5">
               CSAT Today
             </div>
-            <div className="inline-flex items-center gap-0.5 text-[11px] font-extrabold text-emerald-300 bg-emerald-950/60 px-1.5 py-0.2 rounded-md mt-1 border border-emerald-800/40">
+            <div className="inline-flex items-center gap-0.5 text-[10px] sm:text-[11px] font-extrabold text-emerald-300 bg-emerald-950/60 px-1.5 py-0.2 rounded-md mt-1 border border-emerald-800/40">
               ▲ 2pt
             </div>
           </div>
@@ -153,14 +153,14 @@ export const DashboardView: React.FC = () => {
               setActiveTab('calls');
               setPlanSubTab('incoming');
             }}
-            className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/15 rounded-xl p-2.5 text-center cursor-pointer transition-all shadow-inner group"
+            className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/15 rounded-xl p-2 sm:p-2.5 text-center cursor-pointer transition-all shadow-inner group"
             title="Click to open Incoming Queue in Planner"
           >
-            <div className="text-lg font-black text-white tabular">2</div>
-            <div className="text-[11px] font-bold text-indigo-200 uppercase tracking-wide mt-0.5">
+            <div className="text-base sm:text-lg font-black text-white tabular">2</div>
+            <div className="text-[10px] sm:text-[11px] font-bold text-indigo-200 uppercase tracking-wide mt-0.5">
               In Queue
             </div>
-            <div className="inline-flex items-center gap-1 text-[11px] font-extrabold text-blue-300 bg-blue-950/60 px-1.5 py-0.2 rounded-md mt-1 border border-blue-800/40 group-hover:bg-blue-900">
+            <div className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-extrabold text-blue-300 bg-blue-950/60 px-1.5 py-0.2 rounded-md mt-1 border border-blue-800/40 group-hover:bg-blue-900">
               <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-ping" />
               <span>● live</span>
             </div>
@@ -434,8 +434,8 @@ export const DashboardView: React.FC = () => {
 
       {/* 4. TASK RESOLUTION / DEEP-LINK POPOVER MODAL */}
       {activeTaskPopup && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl p-5 max-w-sm w-full shadow-2xl border border-slate-200 animate-fadeIn">
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4">
+          <div className="bg-white rounded-2xl p-4 sm:p-5 max-w-sm w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 animate-fadeIn">
             <div className="flex items-start justify-between pb-2 border-b border-slate-100">
               <div>
                 <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-amber-100 text-amber-900">
@@ -446,7 +446,7 @@ export const DashboardView: React.FC = () => {
               </div>
               <button 
                 onClick={() => setActiveTaskPopup(null)}
-                className="text-slate-400 hover:text-slate-700"
+                className="text-slate-400 hover:text-slate-700 p-1 rounded-lg"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -465,21 +465,21 @@ export const DashboardView: React.FC = () => {
                     className="w-full text-left p-2.5 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/50 text-xs font-bold text-slate-800 transition-all flex items-center justify-between"
                   >
                     <span>{opt}</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
+                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
                   </button>
                 ))}
               </div>
             </div>
 
             <div className="pt-2 border-t border-slate-100 flex flex-col gap-2 text-xs">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <button
                   onClick={() => {
                     const targetLeadId = activeTaskPopup.id === 'w1' ? 'lead-2' : 'lead-1';
                     setActiveTaskPopup(null);
                     openLeadModal(targetLeadId);
                   }}
-                  className="text-emerald-700 hover:text-emerald-900 font-bold underline flex items-center gap-1"
+                  className="text-emerald-700 hover:text-emerald-900 font-bold underline flex items-center gap-1 text-left"
                 >
                   <span>Open Lead Card (Leads Modal) →</span>
                 </button>
@@ -489,15 +489,15 @@ export const DashboardView: React.FC = () => {
                     setActiveTaskPopup(null);
                     openTaskThread(thread, activeTaskPopup.id);
                   }}
-                  className="text-indigo-600 hover:text-indigo-800 font-bold underline"
+                  className="text-indigo-600 hover:text-indigo-800 font-bold underline text-left"
                 >
                   Open in Pulse channel →
                 </button>
               </div>
-              <div className="flex justify-end">
+              <div className="flex justify-end pt-1">
                 <button
                   onClick={() => setActiveTaskPopup(null)}
-                  className="text-slate-500 hover:text-slate-800 font-semibold"
+                  className="text-slate-500 hover:text-slate-800 font-semibold py-1 px-2"
                 >
                   Cancel
                 </button>

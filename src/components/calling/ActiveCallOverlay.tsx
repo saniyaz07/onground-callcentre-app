@@ -25,7 +25,7 @@ export const ActiveCallOverlay: React.FC = () => {
     <>
       {/* 1. FLOATING INCOMING CALL ALERT (When an inbound lead calls) */}
       {isIncomingAlert && (
-        <div className="fixed top-16 right-6 z-50 bg-gradient-to-r from-[#7c2d12] to-[#c2410c] text-white p-4 rounded-2xl shadow-2xl border border-rose-400/50 animate-incoming-ring max-w-sm w-full select-none">
+        <div className="fixed top-16 left-3 right-3 sm:left-auto sm:right-6 z-50 bg-gradient-to-r from-[#7c2d12] to-[#c2410c] text-white p-3.5 sm:p-4 rounded-2xl shadow-2xl border border-rose-400/50 animate-incoming-ring sm:max-w-sm select-none">
           <div className="flex items-center justify-between">
             <span className="text-[10px] font-extrabold uppercase tracking-widest text-orange-200">
               Incoming Call · Walk-out Lead
